@@ -30,13 +30,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipo</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
-                   
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login" title="Entrar"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></a></li>
+                    <li class="nav-item  font-weight-bold"><a class="nav-link js-scroll-trigger font-weight-bold" href="#services">Servicios</a></li>
+                    <li class="nav-item  font-weight-bold"><a class="nav-link js-scroll-trigger  font-weight-bold" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item  font-weight-bold"><a class="nav-link js-scroll-trigger  font-weight-bold" href="#about">Nosotros</a></li>
+                    <li class="nav-item  font-weight-bold"><a class="nav-link js-scroll-trigger  font-weight-bold" href="#team">Equipo</a></li>
+                    <li class="nav-item  font-weight-bold"><a class="nav-link js-scroll-trigger  font-weight-bold" href="#contact">Contacto</a></li>
+
+                    <li class="nav-item  font-weight-bold"><a class="nav-link js-scroll-trigger  font-weight-bold" href="login" title="Entrar"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -62,7 +62,8 @@
                         <i class="fas fa-calendar-alt fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Citas</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Te ofrecemos la posibilidad de que sean tus propios clientes que según su disponibilidad seleccionen la cita 
+                    que mejor los convenga. Evitando así desplantes</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -70,7 +71,7 @@
                         <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Página web</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Realizamos tu página web, en funcion de tus gustos y tus necesidades. Con bloques personalizados.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -78,7 +79,7 @@
                         <i class="fas fa-store fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3">Gestor Tienda</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Podrás gestionar tu tienda, el stock, los clientes y los empleados. Todo al alcance de un click</p>
                 </div>
             </div>
         </div>

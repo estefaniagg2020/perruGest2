@@ -25,8 +25,8 @@
                 <div class="card-body p-4">
                     <form method="post" action="{{ url('/register') }}">
                         @csrf
-                        <h1>Register</h1>
-                        <p class="text-muted">Create your account</p>
+                        <h1>Registro</h1>
+                        <p class="text-muted">Crea tu cuenta</p>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -74,7 +74,7 @@
                                    placeholder="Confirm password">
                         </div>
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                        <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+                        <a href="{{ route('login') }}" class="text-center text-dark">Ya tengo cuenta</a>
                     </form>
                 </div>
             </div>

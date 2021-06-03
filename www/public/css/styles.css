@@ -10540,7 +10540,8 @@ img::-moz-selection {
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #b57eae;
+  color: #850173;
+  font-size: 1.1em;
 }
 
 @media (min-width: 992px) {
@@ -10548,8 +10549,7 @@ img::-moz-selection {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
-    background-color: transparent;
-    
+    background-color: transparent;    
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     transition-delay: 25s, 14ms;
   }

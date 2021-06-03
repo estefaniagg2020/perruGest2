@@ -72,8 +72,8 @@
                 <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
                         <div>
-                            <h2>Sign up</h2>
-                            <p>Sign in to start your session</p>
+                            <h2>Conectarte</h2>
+                            <p>Conectate para iniciar sesion</p>
                             <a class="btn btn-lg btn-outline-light mt-3" href="{{ route('register') }}">Register Now!</a>
                         </div>
                     </div>
