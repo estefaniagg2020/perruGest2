@@ -1,9 +1,10 @@
-// CoreUI
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@coreui/coreui/scss/coreui';
+@import '~@coreui/icons/css/all.min.css';
