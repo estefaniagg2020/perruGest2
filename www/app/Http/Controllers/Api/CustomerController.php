@@ -40,8 +40,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        Log::info($request->all());
         $customer = new Customer;
         $customer->create($request->all());
+        $customer->save();
+
+        return $customer;
     }
 
     /**
@@ -64,7 +68,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        $customer->update($request->all());
+        // $customer->update($request->all());
+        $customer->fill($request->all());
+        if($customer->isDirty())
+        {
+            $customer->save();
+        }
     }
 
     /**

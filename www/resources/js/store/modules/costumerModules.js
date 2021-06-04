@@ -9,32 +9,33 @@ export default {
   },
   getters: {},
   actions: {
-   async getCostumers({ commit }) {  
-       await axios.get("/clientes").then(res => {   
-         console.log(res)     
-          commit("all", res.data.customer)
-        
-    
-       });
-      }
+    async getCostumers({ commit }) {
+      await axios.get("/clientes").then(res => {    
+        commit("all", res.data.customer);
+      });
+    },
+    async createCostumer({ commit }, values) {     
+      await axios.post("/clientes", values).then(res=>{
      
+        console.log(res)
+      })
+    }
   },
   mutations: {
     all(state, payload) {
-      payload.filter((item)=>
-      {
-         
-         state.items.push({
+      payload.filter(item => {
+        state.items.push({
           "Nombre cliente": item.name,
-          Email:item.email,
-          Teléfono:  item.telf,
-          "Nombre mascota":  item.name_pet,
-          "Pelo mascota":item.hair_pet,           
-         })
-
-      })
-   
-     
+          Email: item.email,
+          Teléfono: item.telf,
+          "Nombre mascota": item.name_pet,
+          "Pelo mascota": item.hair_pet,
+          "Raza mascota": item.breed_pet,          
+        });
+      });
+    },
+    create(state, payload) {
+      state.items.push(payload)
     }
   }
-}
+};

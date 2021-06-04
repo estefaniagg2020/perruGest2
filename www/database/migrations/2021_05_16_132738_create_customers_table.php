@@ -18,9 +18,9 @@ class CreateCustomersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();            
             $table->string('telf');
-            $table->string('name_pet')->nullable();;
-            $table->string('hair_pet')->nullable();;
-            $table->string('breed_pet')->nullable();;
+            $table->string('name_pet')->nullable();
+            $table->string('hair_pet')->nullable();
+            $table->string('breed_pet')->nullable();
             $table->timestamps();
         });
     }
