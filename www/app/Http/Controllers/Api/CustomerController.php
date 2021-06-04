@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Log;
 
 class CustomerController extends Controller
 {
@@ -15,7 +16,20 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return Customer::get();
+        try {
+            
+            $customer = Customer::get();
+            
+        } catch (Exception $e) {
+            Log::info('GET Budgets Error: ' . $e->getMessage());
+
+            return response()->json(['success' => false, 'error' => $e->getMessage()]);
+        }
+
+        return response()->json(['success' => true, 'customer' => $customer]);
+        
+       
+        
     }
 
     /**
