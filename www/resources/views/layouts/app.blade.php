@@ -41,7 +41,7 @@
             
        
         
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ 'js/app.js' }}" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.js"></script>
         
         @yield('third_party_scripts')
