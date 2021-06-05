@@ -31,6 +31,7 @@ Vue.use(BootstrapVue);
 
 import Vuex from "vuex";
 import store from "./store"
+import router from './routes'
 
 Vue.use(Vuex);
 

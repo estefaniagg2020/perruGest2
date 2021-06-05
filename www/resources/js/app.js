@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 import store from "./store";
+import router from './routes'
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,6 +23,8 @@ import store from "./store";
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component("cliente-component", require("./components/ClientesComponent.vue").default);
+Vue.component('home-component', require('./components/HomeComponent.vue').default);
+Vue.component("sidebar-component", require("./components/SidebarComponent.vue").default);
 
 
 
@@ -34,5 +37,6 @@ Vue.component("cliente-component", require("./components/ClientesComponent.vue")
 
 const app = new Vue({
     store,
+    router,
     el: '#app',
 });

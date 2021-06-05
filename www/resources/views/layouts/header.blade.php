@@ -33,6 +33,6 @@
         </div>
     </li>
 </ul>
-<div class="c-subheader justify-content-between px-3">
+<!-- <div class="c-subheader justify-content-between px-3">
     @yield('breadcrumb')
-</div>
+</div> -->

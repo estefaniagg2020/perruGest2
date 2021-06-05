@@ -18,37 +18,37 @@
 
 <body class="c-app">
 
-    
-     
+    <div id="app">
         @include('layouts.sidebar')
-        
+
         <div class="c-wrapper">
             <header class="c-header c-header-light c-header-fixed">
                 @include('layouts.header')
             </header>
-            
-                <div class="c-body">
-                    <main class="c-main">
-                        @yield('content')
-                      
-                    </main>
-                </div>
-        
-                <footer class="c-footer">
-                    <div><a href="https://coreui.io">CoreUI</a> © 2020 creativeLabs.</div>
-                    <div class="mfs-auto">Powered by&nbsp;<a href="https://coreui.io/">CoreUI</a></div>
-                </footer>
-            
-       
-        
-        <script src="{{ 'js/app.js' }}" ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.js"></script>
-        
-        @yield('third_party_scripts')
-        
-        @stack('page_scripts')
-        
+
+            <div class="c-body">
+                <main class="c-main">
+                    @yield('content')
+                </main>
+            </div>
+
+            <footer class="c-footer">
+                <div><a href="https://coreui.io">CoreUI</a> © 2020 creativeLabs.</div>
+                <div class="mfs-auto">Powered by&nbsp;<a href="https://coreui.io/">CoreUI</a></div>
+            </footer>
+
+        </div>
     </div>
+
+    <script src="{{ 'js/app.js' }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.js"></script>
+
+    @yield('third_party_scripts')
+
+    @stack('page_scripts')
+
+
+
 </body>
 
 </html>

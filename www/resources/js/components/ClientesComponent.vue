@@ -6,20 +6,52 @@
         ><i class="cil-user-follow"></i
       ></b-button>
     </div>
-    <b-table striped hover :items="itemsClientes.items" :per-page="perPage"
-      :current-page="currentPage">
-     hola
-    </b-table>
+
+    <b-table-simple
+    id="my-table"
+      striped
+      hover
+      :per-page="perPage"
+      :current-page="currentPage"
+    >
+      <b-thead>
+        <b-tr>
+          <b-th>Nombre</b-th>
+          <b-th>Email</b-th>
+          <b-th>Teléfono</b-th>
+          <b-th>Mascota</b-th>
+          <b-th>Pelo mascota</b-th>
+          <b-th>Raza</b-th>
+          <b-th>Acción</b-th>
+        </b-tr>
+      </b-thead>
+      <b-tbody id="itemList" v-for="(item, index) in itemsForList" :key="item.id">
+        <b-tr >
+          <b-td>{{ item.name }}</b-td>
+          <b-td>{{ item.email }}</b-td>
+          <b-td>{{ item.telf }}</b-td>
+          <b-td>{{ item.name_pet }}</b-td>
+          <b-td>{{ item.hair_pet }}</b-td>
+          <b-td>{{ item.breed_pet }}</b-td>
+          <b-button class="bg-transparent border-0" @click="updateItem(item)"
+            ><i class="cil-pencil text-info"></i
+          ></b-button>
+          <b-button @click="deleteCostumer({item:item, index:index})" class="bg-transparent border-0"
+            ><i class="cil-trash text-danger"></i
+          ></b-button>
+        </b-tr>
+      </b-tbody>
+    </b-table-simple>
     <b-pagination
       v-model="currentPage"
       :total-rows="rows"
       :per-page="perPage"
-      aria-controls="my-table"
+      aria-controls="itemList"
     ></b-pagination>
 
     <div class="row justify-content-center col-12">
       <div class="col-9 justify-content-center">
-        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+        <b-form @submit="onSubmit" @reset="onReset" v-if="show || editActive">
           <b-form-group
             id="input-group-2"
             label="Nombre cliente:"
@@ -66,6 +98,7 @@
             <b-form-select
               id="input-3"
               v-model="form.breed_pet"
+              :value="form.breed_pet"
               :options="breeds"
               required
             ></b-form-select>
@@ -74,17 +107,17 @@
             <b-form-select
               id="input-3"
               v-model="form.hair_pet"
+              :value="form.hair_pet"            
               :options="hairs"
               required
             ></b-form-select>
           </b-form-group>
 
-          <b-button type="submit" variant="primary">Submit</b-button>
-          <b-button type="reset" variant="danger">Reset</b-button>
+          <b-button type="submit" :variant="editActive ? 'success' : 'primary'">Enviar</b-button>
+          <b-button type="reset" variant="danger" v-if="!editActive">Reset</b-button>
+          <b-button type="reset" variant="danger" v-else @click="cancelEdit">Cancelar</b-button>
         </b-form>
-        <b-card class="mt-3" header="Form Data Result" v-if="show">
-          <pre class="m-0">{{ form }}</pre>
-        </b-card>
+        <b-card class="mt-3" header="Form Data Result" v-if="show"> </b-card>
       </div>
     </div>
   </div>
@@ -94,19 +127,21 @@
 import Vue from "vue";
 
 import { mapState, mapMutations, mapGetters, mapActions } from "vuex";
+import BrandButtons from "../../../vendor/mrholek/CoreUI-Vue/src/views/buttons/BrandButtons.vue";
 export default {
   data() {
-    
     return {
-       perPage: 5,
-       currentPage: 1,
+      editActive:false,     
+      perPage: 5,
+      currentPage: 1,
       form: {
+        id:"",
         email: "",
         name: "",
         telf: "",
         name_pet: "",
-        breed_pet: null,
-        hair_pet: null
+        hair_pet: null,
+        breed_pet: null
       },
       breeds: [
         { text: "Raza", value: null },
@@ -114,24 +149,19 @@ export default {
         "Chihuaha",
         "Yorkshire",
         "Pastor Alemán",
-        "Mestizo"
+        "Mestizo",
+        "Gato persa"
       ],
       hairs: [
         { text: "Pelo", value: null },
-        "Largo-fino",
-        "Largo-grueso",
+        "Largo/fino",
+        "Largo/grueso",
         "Corto",
-        "Corto-fino",
-        "Corto-grueso",
+        "Corto/fino",
+        "Corto/grueso",
         "Sin definir"
       ],
       show: false
-      // items: [
-      //   { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-      //   { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-      //   { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-      //   { age: 38, first_name: 'Jami', last_name: 'Carney' }
-      // ]
     };
   },
   created() {
@@ -139,32 +169,67 @@ export default {
   },
 
   computed: mapState({
-    itemsClientes: state => state.costumerModules
+    itemsClientes: state => state.costumerModules,
+    rows() {
+      return this.itemsClientes.items.length;
+    },
+      itemsForList() {
+       return this.itemsClientes.items.slice(
+         (this.currentPage - 1) * this.perPage,
+         this.currentPage * this.perPage
+       );
+     },
     // usersProfile: (state) =>
     //   state.usersModel.items.filter((user) => user.class != "Client"),
     // profiles: (state) => state.profilesModel.items,
     // users: (state) => state.budgetsModel.users,
   }),
   methods: {
-    ...mapActions("costumerModules", ["getCostumers", "createCostumer"]),
+   
+    ...mapActions("costumerModules", ["getCostumers", "createCostumer","deleteCostumer", "updateCostumer"]),
     onSubmit(event) {
       event.preventDefault();
+      if(!this.editActive)
+      {
       this.createCostumer(this.form);
-      //alert(JSON.stringify(this.form))
+      this.form.email = "";
+      this.form.name = "";
+      this.form.telf = "";
+      this.form.name_pet = "";
+      this.form.hair_pet = null;
+      this.form.breed_pet = null; 
+      }else{
+      this.updateCostumer(this.form);
+      this.editActive = false;
+      }     
+    },
+    updateItem(value)
+    { console.log(value)
+      this.form.email = value.email;
+      this.form.name =  value.name;
+      this.form.telf =  value.telf;
+      this.form.name_pet = value.name_pet;
+      this.form.hair_pet = value.hair_pet;
+      this.form.id = value.id;
+      this.form.breed_pet = value.breed_pet; 
+      this.editActive = true; 
     },
     onReset(event) {
       event.preventDefault();
       // Reset our form values
       this.form.email = "";
       this.form.name = "";
-      this.form.food = null;
-      this.form.checked = [];
+
       // Trick to reset/clear native browser form validation state
       this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    }
+      // this.$nextTick(() => {
+      //   this.show = true;
+      // });
+    }, 
+    cancelEdit(){
+       this.editActive = false;
+       this.show = false;
+    },
   }
 };
 </script>
