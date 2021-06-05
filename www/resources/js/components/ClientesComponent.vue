@@ -127,8 +127,8 @@
 import Vue from "vue";
 
 import { mapState, mapMutations, mapGetters, mapActions } from "vuex";
-import BrandButtons from "../../../vendor/mrholek/CoreUI-Vue/src/views/buttons/BrandButtons.vue";
 export default {
+  name:'ClientesComponent',
   data() {
     return {
       editActive:false,     

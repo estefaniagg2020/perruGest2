@@ -9,9 +9,14 @@
 <script>
 import clientesComponent from "../components/ClientesComponent.vue";
 export default {
+  
+  created(){
+    console.log("componente cliente")
+  },
   components: {
     clientesComponent
-  }
+  },
+  
 };
 </script>
 

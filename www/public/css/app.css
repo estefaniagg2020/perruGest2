@@ -16455,7 +16455,7 @@ html:not([dir=rtl]) .c-header-nav .c-header-nav-btn .badge {
 }
 
 .c-header.c-header-dark {
-  background: #7EB1B5;
+  background: #3c4b64;
   border-bottom: 1px solid #343a40;
 }
 .c-header.c-header-dark .c-subheader {
@@ -19620,7 +19620,7 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-show.c-sidebar-right.c-sidebar-fixed.c-
 }
 .c-sidebar {
   color: #fff;
-  background: #7EB1B5;
+  background: #3c4b64;
 }
 *[dir=rtl] .c-sidebar.c-sidebar-right {
   border: 0;
@@ -19756,13 +19756,13 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-show.c-sidebar-right.c-sidebar-fixed.c-
   color: #fff;
 }
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link.c-disabled, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-disabled.c-sidebar-nav-dropdown-toggle {
-  background: #7EB1B5;
+  background: #3c4b64;
 }
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link.c-disabled .c-sidebar-nav-icon, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-disabled.c-sidebar-nav-dropdown-toggle .c-sidebar-nav-icon {
   color: rgba(255, 255, 255, 0.5);
 }
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav > .c-sidebar-nav-dropdown > .c-sidebar-nav-dropdown-items {
-  background: #7EB1B5;
+  background: #3c4b64;
 }
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav > .c-sidebar-nav-dropdown:hover {
   background: #7EB1B5;
@@ -20134,7 +20134,7 @@ html:not([dir=rtl]) .c-subheader-nav .c-subheader-nav-btn .badge {
 }
 
 .c-subheader.c-subheader-dark {
-  background: #7EB1B5;
+  background: #3c4b64;
   border-bottom: 1px solid #343a40;
 }
 .c-subheader.c-subheader-dark .c-subheader-nav .c-subheader-nav-link,
@@ -21585,8 +21585,8 @@ html:not([dir=rtl]) .list-inline {
 }
 
 .c-app {
-  /* display: flex; */
-  flex-direction: row;  
+  display: flex;
+  flex-direction: row;
   min-height: 100vh;
 }
 
@@ -21806,7 +21806,7 @@ button.bg-dark:focus {
 
 .bg-gradient-dark {
   background: #212333 !important;
-  background: linear-gradient(45deg, #7EB1B5 0%, #212333 100%) !important;
+  background: linear-gradient(45deg, #3c4b64 0%, #212333 100%) !important;
   border-color: #212333 !important;
 }
 

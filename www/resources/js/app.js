@@ -21,10 +21,21 @@ import router from './routes'
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('container-component', require('./components/ContainerComponent.vue').default);
 Vue.component("cliente-component", require("./components/ClientesComponent.vue").default);
-Vue.component('home-component', require('./components/HomeComponent.vue').default);
+Vue.component(
+  "HomeComponent",
+  require("./components/HomeComponent.vue").default
+);
+Vue.component("HeaderComponent",require("./components/HeaderComponent.vue").default
+);
+;
 Vue.component("sidebar-component", require("./components/SidebarComponent.vue").default);
+Vue.component("menuComponent", require("./components/menuComponent.vue").default);
+Vue.component(
+  "DateComponent",
+  require("./components/DateComponent.vue").default
+);
 
 
 

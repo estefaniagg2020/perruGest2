@@ -1,5 +1,4 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-
     <div class="c-sidebar-brand d-md-down-none">
         <img src="{{'assets/img/logog.png' }}" alt="" width="110" class="c-sidebar-brand-full">
         <!-- <img src="https://infyom.com/images/logo/logo_236w.png" width="46"
