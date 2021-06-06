@@ -7,6 +7,12 @@
 // If you want to add something do it here
 @import "custom";
 
+// Fonts
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css');
+
+// Vuetify
+@import '~vuetify/dist/vuetify.min.css';
+
 .card-header:not(.content-center) > .c-icon:first-child {
   margin-right: 0.1rem;
   margin-top: 0.1rem;

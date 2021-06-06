@@ -8,9 +8,9 @@
     <div class="main">
       <main class="col-10 body-main">
         <transition name="fade" mode="out-in">
-             <HomeComponent v-if="this.$route.path == '/home'"/>
+          <HomeComponent v-if="this.$route.path == '/home'"/>
           <ClientesComponent v-if="this.$route.path == '/costumers'"/>
-           <DateComponent v-if="this.$route.path == '/date'"/>
+          <DateComponent v-if="this.$route.path == '/date'"/>
         </transition>
       </main>
     </div>
@@ -46,6 +46,6 @@ export default {
     padding:0;
     margin:0;
   margin-left: 264px;
-  margin-top: -42px;
+  margin-top: -141px;
 }
 </style>

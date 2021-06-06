@@ -1,7 +1,7 @@
 <template>
   <div> 
  
-    <h2>Hola</h2>
+    <h2>Bienvenido a perruGest</h2>
    <!-- <router-view></router-view> -->
 </div>
 </template>

@@ -21,6 +21,13 @@
         </a>
       </li>
     </router-link>
+     <router-link to="employ">
+      <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link c-active" href="">
+          <i class="c-sidebar-nav-icon cil-cart"></i>Empleados
+        </a>
+      </li>
+    </router-link>
     <router-link to="date">
     <li class="c-sidebar-nav-item">
       <a class="c-sidebar-nav-link c-active" href="#">

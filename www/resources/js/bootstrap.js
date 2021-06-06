@@ -33,6 +33,9 @@ import Vuex from "vuex";
 import store from "./store"
 import router from './routes'
 
+import Vuetify from "vuetify";
+Vue.use(Vuetify);
+
 Vue.use(Vuex);
 
 /**
